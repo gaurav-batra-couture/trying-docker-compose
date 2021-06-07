@@ -4,17 +4,20 @@ services:
   db:
     image: postgres
     volumes:
-      - ./data/db:/var/lib/postgresql/data
+      - db_volume:/var/lib/postgresql
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: /bin/sh -c "entrypoint.sh"
     volumes:
       - .:/code
     ports:
       - "8000:8000"
     depends_on:
       - db
+
+volumes:
+  db_volume:
