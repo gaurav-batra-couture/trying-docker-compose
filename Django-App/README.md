@@ -17,3 +17,7 @@ The application will be available on 0.0.0.0:8000.
 ```bash
 curl -XPOST -H "Content-type: application/json" -d '{"name": "doge", "price": 5500}' 'http://localhost:8000/app/add'
 ```
+
+# Deploying on Kubernetes cluster using ![[Okteto Platform]](https://okteto.com/)
+- Deployed the samples apps on a cluster using okteto.
+- Link: https://web-batra98.cloud.okteto.net/app/get
